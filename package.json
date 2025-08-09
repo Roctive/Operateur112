@@ -1,1 +1,29 @@
+{
+  "name": "operateur112",
+  "version": "1.0.0",
+  "description": "Application de gestion des effectifs et casernes",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Roctive",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.roctive.operateur112",
+    "productName": "Operateur112",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    }
+  }
+}
 
