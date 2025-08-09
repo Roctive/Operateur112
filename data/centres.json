@@ -1,0 +1,35 @@
+{
+  "departements": {
+    "31": {
+      "centres": [
+        {
+          "nom": "Toulouse",
+          "vehicules": [
+            {
+              "type": "Ambulance",
+              "effectifBase": 3
+            },
+            {
+              "type": "Camion",
+              "effectifBase": 6
+            }
+          ]
+        },
+        {
+          "nom": "Muret",
+          "vehicules": [
+            {
+              "type": "Ambulance",
+              "effectifBase": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effectifsParType": {
+    "Ambulance": 3,
+    "Camion": 6,
+    "Fourgon": 4
+  }
+}
