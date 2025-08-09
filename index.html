@@ -7,33 +7,64 @@
 </head>
 <body>
     <h1>Gestion des effectifs - Vue d’ensemble</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Département</th>
-                <th>Caserne</th>
-                <th>Besoin</th>
-                <th>Effectif</th>
-                <th>Statut</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>31</td>
-                <td>Toulouse</td>
-                <td>10</td>
-                <td>8</td>
-                <td class="alert">⚠️ Inférieur</td>
-            </tr>
-            <tr>
-                <td>31</td>
-                <td>Muret</td>
-                <td>5</td>
-                <td>6</td>
-                <td class="ok">✅ Supérieur</td>
-            </tr>
-        </tbody>
-    </table>
+
+    <section id="vue-overview">
+        <table>
+            <thead>
+                <tr>
+                    <th>Département</th>
+                    <th>Caserne</th>
+                    <th>Besoin</th>
+                    <th>Effectif</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Rempli dynamiquement -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="forms">
+        <h2>Ajouter un centre</h2>
+        <form id="form-ajout-centre">
+            <label for="dep-centre">Département :</label>
+            <input type="text" id="dep-centre" required pattern="\d{2,3}" title="Exemple : 31">
+
+            <label for="nom-centre">Nom du centre :</label>
+            <input type="text" id="nom-centre" required>
+
+            <button type="submit">Ajouter Centre</button>
+        </form>
+
+        <h2>Ajouter un véhicule</h2>
+        <form id="form-ajout-vehicule">
+            <label for="dep-vehicule">Département :</label>
+            <input type="text" id="dep-vehicule" required pattern="\d{2,3}" title="Exemple : 31">
+
+            <label for="centre-vehicule">Centre :</label>
+            <select id="centre-vehicule" required>
+                <option value="">-- Choisissez --</option>
+            </select>
+
+            <label for="type-vehicule">Type de véhicule :</label>
+            <input type="text" id="type-vehicule" required>
+
+            <label for="effectif-vehicule">Effectif de base :</label>
+            <input type="number" id="effectif-vehicule" required min="1" max="20">
+
+            <button type="submit">Ajouter Véhicule</button>
+        </form>
+
+        <h2>Paramètres - Effectifs par type de véhicule</h2>
+        <form id="form-param-effectifs">
+            <div id="param-effectifs-container">
+                <!-- champs ajoutés dynamiquement -->
+            </div>
+            <button type="submit">Sauvegarder paramètres</button>
+        </form>
+    </section>
+
+    <script src="renderer.js"></script>
 </body>
 </html>
-
